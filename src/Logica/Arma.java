@@ -20,7 +20,7 @@ public class Arma {
 	
 	//constructores
 	public Arma(String nombre, int potencia) {
-		this.nombre=nombre;
+		setNombre(nombre);
 		setPotencia(potencia);
 	}
 
@@ -37,7 +37,7 @@ public class Arma {
 		return this.potencia;
 	}
 	
-	//setters
+	//setters privados para solo usarlos dentro de la clase y no por fuera
 	private void setPotencia(int potencia) {
 		if(potencia >= 10 && potencia <= 19) {
 			this.potencia = potencia;
