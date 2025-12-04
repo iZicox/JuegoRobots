@@ -9,6 +9,7 @@ public class Robot {
 	private int vida;	//Valor inicial del número de vidas
 	private Arma arma;
 	
+	
 	//Constructor que recibe nombre y arma
 	public Robot(String nombre, Arma arma) {
 		setNombre(nombre);
@@ -31,6 +32,9 @@ public class Robot {
 		this.vida = 100;
 		
 	}
+	
+	
+	
 	//-----------------------------------
 	public String getNombre() {
 		return this.nombre;
@@ -55,15 +59,15 @@ public class Robot {
 	
 	//Métodos
 	
-	void atacar(Robot robot) {
+	public void atacar(Robot robot) {
 		int factorSuerte = (int) (Math.random() * 8);
 		int danio = arma.getPotencia() + factorSuerte;
-		String mensaje = nombre + " ataca a " + robot.nombre + " con " + arma.getNombre() + "...";
+		String mensaje = this.nombre + " ataca a " + robot.nombre + " con " + arma.getNombre() + "...";
 		System.out.println(mensaje);
 		robot.recibirDanio(danio);
 	}
 	
-	void recibirDanio(int cantidad) {
+	public void recibirDanio(int cantidad) {
         vida -= cantidad;
         if (vida < 0) {
         	vida = 0;
@@ -71,8 +75,8 @@ public class Robot {
         System.out.println(" --- " + nombre + " recibe " + cantidad + " puntos de daño. Vida restante: " + vida);
     }
 	
-	boolean estaVivo() {
-        return vida > 0;
+	public boolean estaVivo() {
+        return this.vida > 0;
     }
 	
 	@Override

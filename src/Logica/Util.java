@@ -1,5 +1,6 @@
 package Logica;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Util {
@@ -18,9 +19,28 @@ public class Util {
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());
 			}
-
 		}
+	}
+	
+	public static boolean alguienMurio(Robot robotA, Robot robotB) {
+		if(robotA.estaVivo() && robotB.estaVivo()) {
+			return false;
+		}
+		return true;
+	}
+	
+	public static boolean lanzarMoneda(double probabilidad) throws IllegalArgumentException{
+		Random rand = new Random();
+		if(probabilidad <= 0) {
+			throw new IllegalArgumentException(String.format("Debes ingresar una probabilidad mayor a cero."));
+		}
+	
+			if( probabilidad < (rand.nextDouble()*100+1)) {
+				return false;
+			}
+			return true;
+	
 		
-
+		
 	}
 }
