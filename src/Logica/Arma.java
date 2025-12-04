@@ -48,6 +48,13 @@ public class Arma {
 		
 	}
 	
+	private void setNombre(String nombre) throws NullPointerException{
+		if (nombre == null) {
+			throw new NullPointerException ("El nombre del arma no puede ser null.");
+		}
+		this.nombre=nombre;
+	}
+	
 	
 	
 }
