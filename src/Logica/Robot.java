@@ -77,7 +77,7 @@ public class Robot {
 	
 	@Override
 	public String toString() {
-		return nombre + " armado con " + arma;
+		return String.format("%s armado con %s.",this.nombre,this.arma.getNombre());
 	}
 	
 }
