@@ -10,7 +10,8 @@ public enum TipoArma {
 	PISTOLA_NUCLEAR("Pistola nuclear", 12),
 	LANZA_DE_DIAMANTE("Lanza de diamante", 11),
 	ESCOPETA_SONICA("Escopeta sónica", 14),
-	LANZALLAMAS_FUNDENTE("Lanzallamas fundente", 15);
+	LANZALLAMAS_FUNDENTE("Lanzallamas fundente", 15),
+	PUNOS_DE_ACERO("Puños de acero", 10);
 	
 	//atributos
 	private final String nombre;

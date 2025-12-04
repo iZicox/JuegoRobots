@@ -2,24 +2,24 @@ package Logica;
 
 public class Robot {
 	
-	public Robot() {
-		vida = 100;
-	}
 	
-
+	
+	//atributos
 	private String nombre;
 	private int vida;	//Valor inicial del número de vidas
 	private Arma arma;
 	
 	//Constructor que recibe nombre y arma
 	public Robot(String nombre, Arma arma) {
-		this.nombre = nombre;
+		setNombre(nombre);
+		setArma(arma);
 		setVida();
 	}
 	
 	public Robot(String nombre) {
-		this.nombre = nombre;
-		this.arma = new Arma("Puños de Acero", 10);
+		setNombre(nombre);
+		setArma(TipoArma.PUNOS_DE_ACERO);
+		setVida();
 	}
 	
 	//Getters y Setters
@@ -33,19 +33,23 @@ public class Robot {
 	}
 	//-----------------------------------
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
-	public void setNombre(String nombre) {
+	private void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
 	public Arma getArma() {
-		return arma;
+		return this.arma;
 	}
 
-	public void setArma(Arma arma) {
+	private void setArma(Arma arma) {
 		this.arma = arma;
+	}
+	
+	private void setArma(TipoArma arma) {
+		this.arma = new Arma(arma);
 	}
 	
 	
