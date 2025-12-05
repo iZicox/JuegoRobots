@@ -8,6 +8,8 @@ public class Arena {
 	private String nombreRobot1;
 	private String nombreRobot2;
 	
+	
+	
 	//Array de armas
 	Arma[] armas = {
 		new Arma("Motosierra de plasma", 15),
