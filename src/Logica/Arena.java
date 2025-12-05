@@ -1,8 +1,14 @@
 package Logica;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Arena {
+	//Atributos
+	private String nombreRobot1;
+	private String nombreRobot2;
+	
+	//Array de armas
 	Arma[] armas = {
 		new Arma("Motosierra de plasma", 15),
 		new Arma("Cañón de pulsos", 18),
@@ -17,10 +23,34 @@ public class Arena {
 		new Arma("Puños de acero", 10),
 	};
 	
+	
+	//Método obtener arma aleatoria
 	public static Arma obtenerArmaAleatoria(Arma[] armas) {
         Random aleatorio = new Random();
         int indice = aleatorio.nextInt(armas.length);
         return armas[indice];
     }
+	
+	//Método dar nombre a los robots
+	public void nombrarRobots(String nombreRobot1, String nombreRobot2, Scanner teclado) {
+		System.out.print("Introduce el nombre del Robot 1: ");
+		nombreRobot1 = teclado.nextLine();
+		System.out.print("Introduce el nombre del Robot 2: ");
+		nombreRobot2 = teclado.nextLine();
+	}
+	
+	//Creamos los objetos robot
+	Robot robot1 = new Robot(nombreRobot1, obtenerArmaAleatoria(armas));
+	Robot robot2 = new Robot(nombreRobot2, obtenerArmaAleatoria(armas));
+	
+	void bienvenida() {
+		System.out.println("---BIENVENIDOS A ROBOT WARS");
+	}
+	void configuramosRobots() {
+		
+	}
+	
+	
+	
 
 }
