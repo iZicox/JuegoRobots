@@ -1,12 +1,10 @@
 package Logica;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Arena {
-	//Atributos
-	private static String nombreRobot1;
-	private static String nombreRobot2;
+	
+	private static final int INICIO_ARMA_ALEATORIA = 0;
 	
 	//Array de armas autogenerado del enum
 	private static Arma[] creacionArmas() {
@@ -22,26 +20,14 @@ public class Arena {
 	//Método obtener arma aleatoria
 	public static int obtenerArmaAleatoria(Arma[] armas) {
 		while(true) {
-			int indice = Util.sorteo(0,armas.length-1);
+			int indice = Util.sorteo(INICIO_ARMA_ALEATORIA,armas.length-1);
 			if(armas[indice] != null) {
 				return indice;
 			}	
 		}
     }
 	
-	//Método dar nombre a los robots
-	private void nombrarRobots(String nombreRobot1, String nombreRobot2, Scanner teclado) {
-		
-		System.out.print("Introduce el nombre del Robot 1: ");
-		nombreRobot1 = teclado.nextLine();
-		System.out.print("Introduce el nombre del Robot 2: ");
-		nombreRobot2 = teclado.nextLine();
-	}
 	
-	//Creamos los objetos robot
-	private Robot crearRobot(String nombre, Arma arma) {
-		return new Robot(nombre, arma);
-	}
 	
 	
 	//MÉTODOS
@@ -51,8 +37,8 @@ public class Arena {
 
 		Arma[] armas = creacionArmas();
 		
-		nombreRobot1 = Util.leerCadena("Introduce el nombre del robot 1: ", 3, 20, sc);
-		nombreRobot2 = Util.leerCadena("Introduce el nombre del robot 2: ", 3, 20, sc);
+		String nombreRobot1 = Util.leerCadena("Introduce el nombre del robot 1: ", 3, 20, sc);
+		String nombreRobot2 = Util.leerCadena("Introduce el nombre del robot 2: ", 3, 20, sc);
 		
 		int indiceArmaRobot1 = obtenerArmaAleatoria(armas);
 		Arma armaRobot1 = new Arma(armas[indiceArmaRobot1]);
@@ -68,7 +54,7 @@ public class Arena {
 		System.out.println("Y por otro lado contamos con el aspirante invicto " + robot_2.getNombre() + " armado con " + robot_2.getArma().getNombre());
 		System.out.println("¡Comienza el combate!");
 		System.out.println(robot_1.getNombre() + " VS " + robot_2.getNombre());
-	
+		System.out.println("-------------------------------------------------");
 		//sorteo de quien inicia
 		System.out.println("Lancemos una moneda a ver quien inicia esta pelea del siglo!!!");
 		System.out.printf("Cara para %s y sello para %s . . .\n",robot_1.getNombre(),robot_2.getNombre());

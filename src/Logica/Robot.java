@@ -72,7 +72,7 @@ public class Robot {
         if (vida < 0) {
         	vida = 0;
         }
-        System.out.println(" --- " + nombre + " recibe " + cantidad + " puntos de daño. Vida restante: " + vida);
+        System.out.println("   >>  " + nombre + " recibe " + cantidad + " puntos de daño. Vida restante: " + vida);
     }
 	
 	public boolean estaVivo() {
