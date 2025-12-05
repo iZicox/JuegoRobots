@@ -1,7 +1,10 @@
 package Logica;
 
 import java.util.Scanner;
-
+/**
+ * @author Francisco Antonio Rosales Mangano
+ * @author Antonio Otero
+ */
 public class Arena {
 	
 	private static final int INICIO_ARMA_ALEATORIA = 0;
