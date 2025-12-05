@@ -55,6 +55,10 @@ public class Arma {
 		this.nombre=nombre;
 	}
 	
+	public String toString(Robot robot) {
+		return String.format("Robot: %s. Armado con: %s.",robot.getNombre(),robot.getArma());
+	}
+	
 	
 	
 }

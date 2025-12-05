@@ -43,4 +43,9 @@ public class Util {
 		
 		
 	}
+	
+	public static int sorteo(int min, int max) {
+		Random rand = new Random();
+		return rand.nextInt(min,max+1);
+	}
 }

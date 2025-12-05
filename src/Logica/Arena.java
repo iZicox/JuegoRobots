@@ -8,33 +8,27 @@ public class Arena {
 	private String nombreRobot1;
 	private String nombreRobot2;
 	
-	
-	
-	//Array de armas
-	Arma[] armas = {
-		new Arma("Motosierra de plasma", 15),
-		new Arma("Cañón de pulsos", 18),
-		new Arma("Espada infinita", 10),
-		new Arma("Martillo neumático", 12),
-		new Arma("Garras de titanio", 10),
-		new Arma("Látigo eléctrico", 11),
-		new Arma("Pistola nuclear", 12),
-		new Arma("Lanza de diamante", 11),
-		new Arma("Escopeta sónica", 14),
-		new Arma("Lanzallamas fundente", 15),
-		new Arma("Puños de acero", 10),
-	};
-	
+	//Array de armas autogenerado del enum
+	private static Arma[] creacionArmas() {
+		TipoArma[] arsenal = TipoArma.values();
+		Arma[] armas = new Arma[arsenal.length];
+		
+		for(int i = 0; i < armas.length; i++) {
+			armas[i] = new Arma(arsenal[i]);
+		}
+		return armas;
+	}
 	
 	//Método obtener arma aleatoria
-	public static Arma obtenerArmaAleatoria(Arma[] armas) {
+	private Arma obtenerArmaAleatoria(Arma[] armas) {
         Random aleatorio = new Random();
         int indice = aleatorio.nextInt(armas.length);
         return armas[indice];
     }
 	
 	//Método dar nombre a los robots
-	public void nombrarRobots(String nombreRobot1, String nombreRobot2, Scanner teclado) {
+	private void nombrarRobots(String nombreRobot1, String nombreRobot2, Scanner teclado) {
+		
 		System.out.print("Introduce el nombre del Robot 1: ");
 		nombreRobot1 = teclado.nextLine();
 		System.out.print("Introduce el nombre del Robot 2: ");
@@ -42,12 +36,16 @@ public class Arena {
 	}
 	
 	//Creamos los objetos robot
+	private Robot crearRobot(String nombre, Arma arma) {
+		return new Robot(nombre, arma);
+	}
+	
 	Robot robot1 = new Robot(nombreRobot1, obtenerArmaAleatoria(armas));
 	Robot robot2 = new Robot(nombreRobot2, obtenerArmaAleatoria(armas));
 	
 	//MÉTODOS
 	//Bienvenida
-	void bienvenida() {
+	private void iniciarCombate() {
 		System.out.println("---BIENVENIDOS A ROBOT WARS");
 	}
 	//Configuración de los Robots
@@ -86,7 +84,18 @@ public class Arena {
         }
 	}
 	
-	
+	public static void main(String[] args) {
+		
+		Arma[] armas = creacionArmas();
+		
+		for(Arma n: armas) {
+			System.out.println(n.getNombre());
+			System.out.println(n.getPotencia());
+			System.out.println();
+			System.out.println();
+		}
+		
+	}
 	
 
 }
