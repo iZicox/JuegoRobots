@@ -34,14 +34,10 @@ public class Util {
 		if(probabilidad <= 0) {
 			throw new IllegalArgumentException(String.format("Debes ingresar una probabilidad mayor a cero."));
 		}
-	
 			if( probabilidad < (rand.nextDouble()*100+1)) {
 				return false;
 			}
-			return true;
-	
-		
-		
+			return true;	
 	}
 	
 	public static int sorteo(int min, int max) {

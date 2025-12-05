@@ -20,10 +20,13 @@ public class Arena {
 	}
 	
 	//Método obtener arma aleatoria
-	private Arma obtenerArmaAleatoria(Arma[] armas) {
-        Random aleatorio = new Random();
-        int indice = aleatorio.nextInt(armas.length);
-        return armas[indice];
+	public static int obtenerArmaAleatoria(Arma[] armas) {
+		while(true) {
+			int indice = Util.sorteo(0,armas.length-1);
+			if(armas[indice] != null) {
+				return indice;
+			}	
+		}
     }
 	
 	//Método dar nombre a los robots

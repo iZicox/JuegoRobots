@@ -23,6 +23,11 @@ public class Arma {
 		setNombre(nombre);
 		setPotencia(potencia);
 	}
+	
+	public Arma(Arma arma) {
+		setNombre(arma.getNombre());
+		setPotencia(arma.getPotencia());
+	}
 
 	public Arma(TipoArma arma) {
 		this.nombre=arma.getNombre();
@@ -55,8 +60,13 @@ public class Arma {
 		this.nombre=nombre;
 	}
 	
-	public String toString(Robot robot) {
-		return String.format("Robot: %s. Armado con: %s.",robot.getNombre(),robot.getArma());
+	@Override
+	public String toString() throws NullPointerException {
+		try {
+			return String.format("Robot: %s.\nArmado con: %s.\n",this.nombre,this.potencia);
+		}catch(NullPointerException e) {
+			return null;
+		}
 	}
 	
 	
