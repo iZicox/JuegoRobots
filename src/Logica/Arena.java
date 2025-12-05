@@ -43,11 +43,45 @@ public class Arena {
 	Robot robot1 = new Robot(nombreRobot1, obtenerArmaAleatoria(armas));
 	Robot robot2 = new Robot(nombreRobot2, obtenerArmaAleatoria(armas));
 	
+	//MÉTODOS
+	//Bienvenida
 	void bienvenida() {
 		System.out.println("---BIENVENIDOS A ROBOT WARS");
 	}
+	//Configuración de los Robots
 	void configuramosRobots() {
+		System.out.println("Esta noche tenemos por un lado al mítico " + robot1.getNombre() + " armado con " + robot1.getArma().getNombre());
+		System.out.println("Y por otro lado contamos con el aspirante invicto " + robot2.getNombre() + " armado con " + robot2.getArma().getNombre());
+		System.out.println("¡Comienza el combate!");
+		System.out.println(robot1.getNombre() + " VS " + robot2.getNombre());
 		
+	}
+	//Combate
+	void combatePorRondas(Scanner teclado) {
+		while (robot1.estaVivo() && robot2.estaVivo()) {
+
+			System.out.print("Pulsa ENTER para la siguiente ronda...");
+			teclado.nextLine();
+
+			// robot1 ataca primero
+			robot1.atacar(robot2);
+
+			if (!robot2.estaVivo()) {
+				break;
+			}
+			//robot2 continua atacando
+			robot2.atacar(robot1);
+		}
+	}
+	
+	//Ganador
+	void ganador() {
+		System.out.println("=== FIN DEL COMBATE ===");
+        if (robot1.estaVivo()) {
+            System.out.println("¡El ganador es " + robot1.getNombre() + "!");
+        } else {
+            System.out.println("¡El ganador es " + robot2.getNombre() + "!");
+        }
 	}
 	
 	
