@@ -62,7 +62,7 @@ public class Robot {
 	public void atacar(Robot robot) {
 		int factorSuerte = (int) (Math.random() * 8);
 		int danio = arma.getPotencia() + factorSuerte;
-		String mensaje = this.nombre + " ataca a " + robot.nombre + " con " + arma.getNombre() + "...";
+		String mensaje = this.nombre + " ataca a " + robot.getNombre() + " con " + this.arma.getNombre() + "...";
 		System.out.println(mensaje);
 		robot.recibirDanio(danio);
 	}

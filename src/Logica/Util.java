@@ -22,26 +22,20 @@ public class Util {
 		}
 	}
 	
-	public static boolean alguienMurio(Robot robotA, Robot robotB) {
-		if(robotA.estaVivo() && robotB.estaVivo()) {
-			return false;
-		}
-		return true;
+	public static boolean ambosVivos(Robot robotA, Robot robotB) {
+		return robotA.estaVivo() && robotB.estaVivo();
 	}
 	
-	public static boolean lanzarMoneda(double probabilidad) throws IllegalArgumentException{
+	//probabilidad del 50% si es true es cara y false cruz
+	public static boolean lanzarMoneda() {
 		Random rand = new Random();
-		if(probabilidad <= 0) {
-			throw new IllegalArgumentException(String.format("Debes ingresar una probabilidad mayor a cero."));
-		}
-			if( probabilidad < (rand.nextDouble()*100+1)) {
-				return false;
-			}
-			return true;	
+		return rand.nextBoolean();	
 	}
 	
 	public static int sorteo(int min, int max) {
 		Random rand = new Random();
 		return rand.nextInt(min,max+1);
 	}
+	
+	
 }
