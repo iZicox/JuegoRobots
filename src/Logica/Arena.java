@@ -2,14 +2,13 @@ package Logica;
 
 import java.util.Scanner;
 /**
- * @author Francisco Antonio Rosales Mangano
- * @author Antonio Manuel Otero de Antonio
- */
-
-/**
  * Clase principal que gestiona la lógica del combate entre dos robots.
  * Se encarga de crear las armas, asignarlas aleatoriamente a los robots,
  * iniciar el combate, controlar los turnos y anunciar al ganador.
+ * 
+ * @author Francisco Antonio Rosales Mangano
+ * @author Antonio Manuel Otero de Antonio
+ * @version 1.0
  */
 
 public class Arena {
