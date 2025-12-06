@@ -5,6 +5,9 @@ package Logica;
  * @author Francisco Antonio Rosales Mangano
  * @author Antonio Manuel Otero de Antonio
  * @version 1.0
+ * 
+ * Representa a un robot participante en un combate. Cada robot posee un nombre,
+ * una cantidad de vida inicial y un arma con la que puede atacar a otros robots.
  *
  */
 
@@ -13,9 +16,11 @@ public class Robot {
 	
 	
 	//atributos
-	
+	/** Nombre del robot. */
 	private String nombre;
-	private int vida;	//Valor inicial del número de vidas
+	/** Valor inicial del número de vidas */
+	private int vida;	
+	/** Arma equipada por el robot. */
 	private Arma arma;
 	
 	
@@ -44,11 +49,13 @@ public class Robot {
 		return vida;
 	}
 
+	/**
+	 * Establece la vida inicial del robot a 100.
+	 */
 	private void setVida() {
 		this.vida = 100;
 		
 	}
-	
 	
 	
 	//-----------------------------------
@@ -76,7 +83,10 @@ public class Robot {
 	//Métodos
 	
 	/**
-	 * @param objeto clase robot
+	 * Realiza un ataque contra otro robot, calculando el daño en función
+	 * de la potencia del arma y un factor de suerte aleatorio.
+	 *
+	 * @param robot (Robot que recibe el ataque).
 	 */
 	public void atacar(Robot robot) {
 		int factorSuerte = (int) (Math.random() * 8);
@@ -104,6 +114,12 @@ public class Robot {
         return this.vida > 0;
     }
 	
+	/**
+	 * Devuelve una representación textual del robot, incluyendo su nombre
+	 * y el arma que posee.
+	 *
+	 * @return Cadena con la información del robot.
+	 */
 	@Override
 	public String toString() {
 		return String.format("%s armado con %s.",this.nombre,this.arma.getNombre());
