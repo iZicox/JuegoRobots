@@ -10,6 +10,10 @@ public class Arena {
 	private static final int INICIO_ARMA_ALEATORIA = 0;
 	
 	//Array de armas autogenerado del enum
+	
+	/**
+	 * @return arma (Objeto de la clase Arma)
+	 */
 	private static Arma[] creacionArmas() {
 		TipoArma[] arsenal = TipoArma.values();
 		Arma[] armas = new Arma[arsenal.length];
@@ -21,6 +25,12 @@ public class Arena {
 	}
 	
 	//Método obtener arma aleatoria
+	
+	/**
+	 * 
+	 * @param armas (Array clase Arma)
+	 * @return indice (Integer): índice aleatorio para el arma en cuestión
+	 */
 	public static int obtenerArmaAleatoria(Arma[] armas) {
 		while(true) {
 			int indice = Util.sorteo(INICIO_ARMA_ALEATORIA,armas.length-1);
