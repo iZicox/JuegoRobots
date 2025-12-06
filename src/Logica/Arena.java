@@ -48,19 +48,15 @@ public class Arena {
 		}
     }
 	
-	
-	
-	
-	//MÉTODOS
-	
 	/**
 	 * Inicializa el combate entre dos robots. Solicita los nombres a los jugadores,
 	 * asigna armas aleatorias, muestra la presentación del combate y determina qué
 	 * robot inicia el enfrentamiento.
 	 *
-	 * @param sc Scanner utilizado para leer la entrada del usuario.
+	 * @param sc {@link Scanner} utilizado para leer la entrada del usuario.
+	 * @see Util#leerCadena(String, int, int, Scanner)
+     * @see Util#lanzarMoneda()
 	 */
-	
 	private static void iniciarCombate(Scanner sc) {
 		System.out.println("****************BIENVENIDOS A ROBOT WARS****************");
 
