@@ -31,12 +31,13 @@ public class Arena {
 		return armas;
 	}
 	
-	//Método obtener arma aleatoria
 	
 	/**
+	 * Obtiene un índice aleatorio de un arma disponible en el array.
 	 * 
-	 * @param armas (Array clase Arma)
-	 * @return indice (Integer): índice aleatorio para el arma en cuestión
+	 * @param armas (Array clase {@link Arma}
+	 * @return indice (Integer): índice aleatorio para el arma en cuestión no nula
+	 * @see Util#sorteo(int, int)
 	 */
 	public static int obtenerArmaAleatoria(Arma[] armas) {
 		while(true) {
