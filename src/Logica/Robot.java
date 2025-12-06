@@ -13,18 +13,26 @@ public class Robot {
 	
 	
 	//atributos
+	
 	private String nombre;
 	private int vida;	//Valor inicial del número de vidas
 	private Arma arma;
 	
 	
-	//Constructor que recibe nombre y arma
+	/**
+	 * @param nombre (String), 
+	 * @param arma (Objeto clase Arma)
+	 */
 	public Robot(String nombre, Arma arma) {
 		setNombre(nombre);
 		setArma(arma);
 		setVida();
 	}
 	
+	/**
+	 * 
+	 * @param nombre (String)
+	 */
 	public Robot(String nombre) {
 		setNombre(nombre);
 		setArma(TipoArma.PUNOS_DE_ACERO);
@@ -67,6 +75,9 @@ public class Robot {
 	
 	//Métodos
 	
+	/**
+	 * @param objeto clase robot
+	 */
 	public void atacar(Robot robot) {
 		int factorSuerte = (int) (Math.random() * 8);
 		int danio = arma.getPotencia() + factorSuerte;
