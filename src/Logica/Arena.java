@@ -16,10 +16,10 @@ public class Arena {
 	/** Valor inicial para el sorteo del índice de un arma aleatoria. */
 	private static final int INICIO_ARMA_ALEATORIA = 0;
 	
-	//Array de armas autogenerado del enum
-	
 	/**
-	 * @return arma (Objeto de la clase Arma)
+	 * Genera un array de armas a partir de las constantes definidas en {@link TipoArma}
+	 * 
+	 * @return un array de todas las armas disponibles tipo (Objeto de la clase Arma)
 	 */
 	private static Arma[] creacionArmas() {
 		TipoArma[] arsenal = TipoArma.values();
