@@ -5,8 +5,16 @@ import java.util.Scanner;
  * @author Francisco Antonio Rosales Mangano
  * @author Antonio Manuel Otero de Antonio
  */
+
+/**
+ * Clase principal que gestiona la lógica del combate entre dos robots.
+ * Se encarga de crear las armas, asignarlas aleatoriamente a los robots,
+ * iniciar el combate, controlar los turnos y anunciar al ganador.
+ */
+
 public class Arena {
 	
+	/** Valor inicial para el sorteo del índice de un arma aleatoria. */
 	private static final int INICIO_ARMA_ALEATORIA = 0;
 	
 	//Array de armas autogenerado del enum
@@ -44,7 +52,15 @@ public class Arena {
 	
 	
 	//MÉTODOS
-	//Bienvenida
+	
+	/**
+	 * Inicializa el combate entre dos robots. Solicita los nombres a los jugadores,
+	 * asigna armas aleatorias, muestra la presentación del combate y determina qué
+	 * robot inicia el enfrentamiento.
+	 *
+	 * @param sc Scanner utilizado para leer la entrada del usuario.
+	 */
+	
 	private static void iniciarCombate(Scanner sc) {
 		System.out.println("****************BIENVENIDOS A ROBOT WARS****************");
 
@@ -87,6 +103,16 @@ public class Arena {
 	
 
 	//Combate. El robot_1 inicia el combate
+	/**
+	 * Controla el combate por rondas entre dos robots. El robot indicado como
+	 * robot_1 ataca primero, seguido por robot_2, alternando turnos hasta que uno
+	 * de los dos deja de estar vivo.
+	 *
+	 * @param teclado Scanner para pausar la ejecución esperando pulsación de ENTER.
+	 * @param robot_1 Robot que inicia atacando en la primera ronda.
+	 * @param robot_2 Robot que recibe el primer ataque.
+	 */
+	
 	private static void combatePorRondas(Scanner teclado, Robot robot_1, Robot robot_2) {
 		
 		while (Util.ambosVivos(robot_1, robot_2)) {
@@ -123,6 +149,13 @@ public class Arena {
             System.out.println("¡El ganador es " + robot_2.getNombre() + "!");
         }
 	}
+	
+	/**
+	 * Método principal del programa. Crea el scanner necesario 
+	 * para el combate e inicia la ejecución de la arena de batalla.
+	 *
+	 * @param args Argumentos recibidos desde la línea de comandos (no utilizados).
+	 */
 	
 	public static void main(String[] args) {
 		
