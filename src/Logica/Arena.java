@@ -80,16 +80,24 @@ public class Arena {
 		System.out.println("¡Comienza el combate!");
 		System.out.println(robot1.getNombre() + " VS " + robot2.getNombre());
 		System.out.println("-------------------------------------------------");
+		
 		//sorteo de quien inicia
 		System.out.println("Lancemos una moneda a ver quien inicia esta pelea del siglo!!!");
 		System.out.printf("Cara para %s y sello para %s . . .\n",robot1.getNombre(),robot2.getNombre());
 		System.out.println("Lanzando moneda al aire . . .");
+		
 		if(Util.lanzarMoneda()) {
+			
 			System.out.printf("Ha caido CARA. Empieza %s.\n",robot1.getNombre());
+			
 			combatePorRondas(sc, robot1, robot2);
+			
 		}else {
+			
 			System.out.printf("Ha caido CRUZ. Empieza %s.\n",robot2.getNombre());
+			
 			combatePorRondas(sc, robot2, robot1);
+			
 		}
 		
 		ganador(robot1, robot2);
@@ -135,7 +143,14 @@ public class Arena {
 		}
 	}
 	
-	//Ganador/*
+	/**
+     * Determina y muestra el ganador del combate.
+     *
+     * @param robot1 primer robot participante.
+     * @param robot2 segundo robot participante.
+     * @see Robot#estaVivo()
+     */
+
 	private static void ganador(Robot robot1, Robot robot2) {
 		System.out.println("=== FIN DEL COMBATE ===");
         if (robot1.estaVivo()) {
