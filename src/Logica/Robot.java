@@ -1,5 +1,13 @@
 package Logica;
 
+/**
+ * 
+ * @author Francisco Antonio Rosales Mangano
+ * @author Antonio Manuel Otero de Antonio
+ * @version 1.0
+ *
+ */
+
 public class Robot {
 	
 	
@@ -67,6 +75,9 @@ public class Robot {
 		robot.recibirDanio(danio);
 	}
 	
+	/**
+	 * @param cantidad de daño recibido
+	 */
 	public void recibirDanio(int cantidad) {
         vida -= cantidad;
         if (vida < 0) {
@@ -75,6 +86,9 @@ public class Robot {
         System.out.println("   >>  " + nombre + " recibe " + cantidad + " puntos de daño. Vida restante: " + vida);
     }
 	
+	/**
+	 * @return el número de vidas
+	 */
 	public boolean estaVivo() {
         return this.vida > 0;
     }

@@ -3,7 +3,7 @@ package Logica;
 import java.util.Scanner;
 /**
  * @author Francisco Antonio Rosales Mangano
- * @author Antonio Otero
+ * @author Antonio Manuel Otero de Antonio
  */
 public class Arena {
 	
