@@ -88,12 +88,19 @@ public class Robot {
 	 *
 	 * @param robot (Robot que recibe el ataque).
 	 */
-	public void atacar(Robot robot) {
-		int factorSuerte = (int) (Math.random() * 8);
-		int danio = arma.getPotencia() + factorSuerte;
-		String mensaje = this.nombre + " ataca a " + robot.getNombre() + " con " + this.arma.getNombre() + "...";
-		System.out.println(mensaje);
-		robot.recibirDanio(danio);
+	public void atacar(Robot robot) throws IllegalArgumentException{
+		try {
+			if (this == robot) {
+			    throw new IllegalArgumentException("Un robot no puede atacarse a sí mismo.");
+			}
+			int factorSuerte = (int) (Math.random() * 8);
+			int danio = arma.getPotencia() + factorSuerte;
+			String mensaje = this.nombre + " ataca a " + robot.getNombre() + " con " + this.arma.getNombre() + "...";
+			System.out.println(mensaje);
+			robot.recibirDanio(danio);
+		}catch(IllegalArgumentException e) {
+			System.out.println("Error en el ataque: " + e.getMessage());
+		}	
 	}
 	
 	/**
