@@ -103,11 +103,11 @@ public class Arena {
 	 * robot1 ataca primero, seguido por robot2, alternando turnos hasta que uno
 	 * de los dos deja de estar vivo.
 	 *
-	 * @param teclado Scanner para pausar la ejecución esperando pulsación de ENTER.
+	 * @param teclado objeto {@link Scanner} para pausar la ejecución esperando pulsación de ENTER.
 	 * @param robot1 Robot que inicia atacando en la primera ronda.
 	 * @param robot2 Robot que recibe el primer ataque.
+	 * @see Util#ambosVivos(Robot, Robot)
 	 */
-	
 	private static void combatePorRondas(Scanner teclado, Robot robot1, Robot robot2) {
 		
 		while (Util.ambosVivos(robot1, robot2)) {
