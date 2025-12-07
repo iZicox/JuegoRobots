@@ -2,7 +2,7 @@ package Logica;
 
 import java.util.Scanner;
 /**
- * Clase principal que gestiona la lógica del combate entre dos robots.
+ * Clase principal que gestiona la logica del combate entre dos robots.
  * Se encarga de crear las armas, asignarlas aleatoriamente a los robots,
  * iniciar el combate, controlar los turnos y anunciar al ganador.
  * 
@@ -33,7 +33,7 @@ public class Arena {
 	
 	
 	/**
-	 * Obtiene un índice aleatorio de un arma disponible en el array.
+	 * Obtiene un indice aleatorio de un arma disponible en el array.
 	 * 
 	 * @param armas (Array clase {@link Arma}
 	 * @return indice (Integer): índice aleatorio para el arma en cuestión no nula
@@ -161,7 +161,7 @@ public class Arena {
 	}
 	
 	/**
-	 * Método principal del programa. Crea el scanner necesario 
+	 * Metodo principal del programa. Crea el scanner necesario 
 	 * para el combate e inicia la ejecución de la arena de batalla.
 	 *
 	 * @param args Argumentos recibidos desde la línea de comandos (no utilizados).

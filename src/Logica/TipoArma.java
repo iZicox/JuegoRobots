@@ -15,7 +15,7 @@ public enum TipoArma {
 	/** Arma de gran potencia cuerpo a cuerpo. */
     MOTOSIERRA_DE_PLASMA("Motosierra de plasma", 15),
 
-    /** Arma de largo alcance con gran daño. */
+    /** Arma de largo alcance con gran dano. */
     CANON_DE_PULSOS("Cañón de pulsos", 18),
 
     /** Arma legendaria con poder moderado. */
@@ -24,10 +24,10 @@ public enum TipoArma {
     /** Arma contundente de gran fuerza. */
     MARTILLO_NEUMATICO("Martillo neumático", 12),
 
-    /** Arma de ataque rápido con daño medio. */
+    /** Arma de ataque rapido con dano medio. */
     GARRAS_DE_TITANIO("Garras de titanio", 10),
 
-    /** Arma flexible con daño eléctrico. */
+    /** Arma flexible con dano electrico. */
     LATIGO_ELECTRICO("Látigo eléctrico", 11),
 
     /** Arma de fuego con gran impacto. */
