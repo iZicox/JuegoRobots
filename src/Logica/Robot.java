@@ -13,8 +13,6 @@ package Logica;
 
 public class Robot {
 	
-	
-	
 	//atributos
 	/** Nombre del robot. */
 	private String nombre;
@@ -58,7 +56,7 @@ public class Robot {
 	}
 	
 	
-	//-----------------------------------
+	//Getters y Setters
 	public String getNombre() {
 		return this.nombre;
 	}
